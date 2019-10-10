@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 @RestController
 public class HelloServerApplication {
-	@Autowired
-	DiscoveryClient client;
+    @Autowired
+    DiscoveryClient client;
 
-	@RequestMapping("/")
-	public String hello() {
-		ServiceInstance localInstance = client.getLocalServiceInstance();
-		return "Hello World: "+ localInstance.getServiceId()+":"+localInstance.getHost()+":"+localInstance.getPort();
-	}
+    @RequestMapping("/")
+    public String hello() {
+        ServiceInstance localInstance = client.getLocalServiceInstance();
+        return "Hello World: "+ localInstance.getServiceId()+":"+localInstance.getHost()+":"+localInstance.getPort();
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(HelloServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HelloServerApplication.class, args);
+    }
 }

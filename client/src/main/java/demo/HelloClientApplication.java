@@ -19,15 +19,15 @@ import javax.annotation.Resource;
 @RestController
 @EnableFeignClients
 public class HelloClientApplication {
-	@Resource
-	HelloClient client;
+    @Resource
+    HelloClient client;
 
-	@RequestMapping("/")
-	public String hello() {
-		return client.hello();
-	}
+    @RequestMapping("/")
+    public String hello() {
+        return client.hello();
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(HelloClientApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HelloClientApplication.class, args);
+    }
 }
