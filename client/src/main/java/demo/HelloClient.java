@@ -1,12 +1,14 @@
 package demo;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-
+/**
+ * @author caiwl
+ * @date 2019/10/10 18:12
+ */
 @FeignClient(name = "HelloServer", fallback = HelloClientFallback.class)
 public interface HelloClient {
-    @RequestMapping(value = "/", method = GET)
+    @GetMapping("/")
     String hello();
 }
